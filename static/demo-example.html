@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <title>Widget Example Page</title>
+  </head>
+  <body>
+    <div>
+      This page demonstrates how a widget should be integrated
+    </div>
+    <div>
+      Widget should be rendered below
+    </div>
+    <!-- Widget -->
+    <div id="widget" class="widget"></div>
+    <script>
+      var js = document.createElement("script");
+      js.async = true;
+      js.src =
+        "/Users/shreytiwari 1/Sites/projects/vue-widget/static/widget-loader.js";
+      document.getElementsByTagName("head")[0].appendChild(js);
+    </script>
+    <!-- end of Widget -->
+    <div>
+      Some other content after the widget
+    </div>
+  </body>
+</html>

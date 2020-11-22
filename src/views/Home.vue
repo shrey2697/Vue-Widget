@@ -12,7 +12,10 @@ import HelloWorld from "@/components/HelloWorld.vue";
 export default {
   name: "Home",
   components: {
-    HelloWorld
-  }
+    HelloWorld,
+  },
+  mounted() {
+    console.log(window.my_special_setting, "*** window");
+  },
 };
 </script>
