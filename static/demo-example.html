@@ -3,24 +3,80 @@
     <title>Widget Example Page</title>
   </head>
   <body>
-    <div>
-      This page demonstrates how a widget should be integrated
-    </div>
-    <div>
-      Widget should be rendered below
-    </div>
-    <!-- Widget -->
-    <div id="widget" class="widget"></div>
-    <script>
-      var js = document.createElement("script");
-      js.async = true;
-      js.src =
-        "/Users/shreytiwari 1/Sites/projects/vue-widget/static/widget-loader.js";
-      document.getElementsByTagName("head")[0].appendChild(js);
-    </script>
-    <!-- end of Widget -->
-    <div>
-      Some other content after the widget
+    <div class="main-div">
+      <div class="left-panel">
+        <div class="main-text">
+          <span style="font-size: 90px; color: #099ba3;">Geeky</span>
+          <span style="font-size: 40px;">GLASSES</span>
+          <div class="subtext">Coming soon...</div>
+        </div>
+        <img src="../src/assets/product.png" width="100%" />
+      </div>
+      <!-- Widget -->
+      <div class="right-panel">
+        <div id="widget" class="widget"></div>
+      </div>
+      <script>
+        var js = document.createElement("script");
+        js.async = true;
+        js.src =
+          "/Users/shreytiwari 1/Sites/projects/vue-widget/static/widget-loader.js";
+        document.getElementsByTagName("head")[0].appendChild(js);
+      </script>
+      <!-- end of Widget -->
     </div>
   </body>
+  <style>
+    .main-div {
+      background-image: radial-gradient(#26303e, black);
+      height: 100vh;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    @keyframes slideInFromTop {
+      0% {
+        transform: translateY(-20%);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+    @keyframes slideInFromBottom {
+      0% {
+        transform: translateY(100%);
+      }
+      100% {
+        transform: translateY(0%);
+      }
+    }
+    img {
+      animation: 1.5s ease-out 0s 1 slideInFromTop;
+    }
+    .main-text {
+      color: white;
+      position: relative;
+      animation: 1.5s ease-out 0s 1 slideInFromBottom;
+    }
+    .left-panel {
+      width: 60%;
+      height: 90%;
+      opacity: 0.7;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      border-right: solid 1px #4f5e74;
+    }
+    .right-panel {
+      width: 40%;
+      padding: 2%;
+    }
+    .subtext {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      /* font-size: 18px; */
+    }
+  </style>
 </html>

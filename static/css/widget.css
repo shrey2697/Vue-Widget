@@ -1,3 +1,75 @@
-h1 {
-  color: blue;
+.container {
+  border-radius: 5px;
+  background-color: rgb(238, 234, 234);
+  padding: 2%;
+  box-shadow: inset 0 0 10px teal;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+}
+#submit-button {
+  background-color: #119da4;
+  width: 100%;
+  border: solid 1px #119da4;
+  outline-color: #119da4;
+  padding: 2%;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 10px;
+  color: #fff;
+  margin-top: 5%;
+}
+#submit-button:hover {
+  background-color: #19647e;
+  transition: all 0.5s;
+}
+.discount-text {
+  color: rgb(54, 54, 54);
+}
+.logo {
+  position: absolute;
+  right: 15;
+  top: 0;
+}
+.logo span {
+  font-size: 50px;
+  font-weight: 900;
+}
+.logo span:nth-child(1) {
+  color: #4b3f72;
+}
+.logo span:nth-child(2) {
+  color: #ffc857;
+}
+.logo span:nth-child(3) {
+  color: #119da4;
+}
+.logo span:nth-child(4) {
+  color: #19647e;
+}
+.input-row {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 10px;
+}
+.input-cell {
+  width: 50%;
+  margin: 0 5px;
+}
+label {
+  font-size: 14px;
+  color: grey;
+  letter-spacing: 1px;
+}
+input,
+label {
+  display: block;
+}
+input {
+  padding: 10px;
+  width: 100%;
+  outline-color: #119da4;
+  border: solid 1px #dddddd;
+  border-radius: 5px;
+  color: rgb(54, 54, 54);
 }
