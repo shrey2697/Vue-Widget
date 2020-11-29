@@ -46,13 +46,13 @@
 .logo span:nth-child(4) {
   color: #19647e;
 }
-.input-row {
+.widget-row {
   display: flex;
   justify-content: space-between;
   width: 100%;
   margin-top: 10px;
 }
-.input-cell {
+.widget-cell {
   width: 50%;
   margin: 0 5px;
 }
