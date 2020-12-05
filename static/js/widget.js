@@ -31,7 +31,6 @@
     var defaults = {
       containerId: "widget",
       formName: "widget-form",
-      // action: "https://signup.input.com.au/subscription/create",
     };
     this.options = defaults;
     initializeWidget(this);
@@ -98,7 +97,7 @@
     }
 
     window.open(
-      `http://localhost:8080?firstname='${form["firstname"].value}'&lastname='${form["lastname"].value}'&email='${form["email"].value}&phone='${form["phone"].value}`,
+      `http://localhost:8080?firstname=${form["firstname"].value}&lastname=${form["lastname"].value}&email=${form["email"].value}&phone=${form["phone"].value}`,
     );
   }
 })();

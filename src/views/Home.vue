@@ -1,21 +1,72 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <Header />
+    <div class="body">
+      <Stepper :currentActive="currentActive" />
+      <!-- Form Component  -->
+      <div class="form">
+        <div class="form-container">
+          <FormComponent :currentActive="currentActive" :quantity="quantity" />
+        </div>
+        <div class="product-container">
+          <ProductComponent
+            :quantity="quantity"
+            :increaseQuan="increaseQuan"
+            :decreaseQuan="decreaseQuan"
+            :currentActive="currentActive"
+          />
+        </div>
+      </div>
+    </div>
+    <Footer :previous="previous" :next="next" />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
-
+import Header from "@/components/Header";
+import Stepper from "@/components/Stepper";
+import FormComponent from "../components/FormComponent/index";
+import ProductComponent from "../components/ProductComponent";
+import Footer from "@/components/Footer";
 export default {
   name: "Home",
-  components: {
-    HelloWorld,
+  data() {
+    return {
+      currentActive: 1,
+      quantity: 1,
+    };
   },
-  mounted() {
-    console.log(window.my_special_setting, "*** window");
+  methods: {
+    next() {
+      if (this.currentActive < 3) {
+        this.currentActive += 1;
+      }
+    },
+    previous() {
+      if (this.currentActive > 1) {
+        this.currentActive -= 1;
+      }
+    },
+    increaseQuan() {
+      this.quantity += 1;
+    },
+    decreaseQuan() {
+      if (this.quantity > 1) {
+        this.quantity -= 1;
+      }
+    },
+  },
+  components: {
+    Header,
+    Stepper,
+    FormComponent,
+    Footer,
+    ProductComponent,
   },
 };
 </script>
+
+<style lang="scss">
+@import "style.scss";
+</style>

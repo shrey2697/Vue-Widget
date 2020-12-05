@@ -1,0 +1,45 @@
+.header {
+  padding: 0 20px;
+  background-color: rgb(20, 20, 20);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10000;
+  left: 0;
+}
+.body {
+  padding: 2% 5%;
+  background-color: rgb(170, 195, 221);
+  height: 100vh;
+}
+.footer {
+  background-color: black;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  padding: 10px 20px;
+  left: 0;
+}
+.form {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+.form-container {
+  background-color: white;
+  margin-top: 30px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px #4b3f72;
+  padding: 5%;
+  margin-bottom: 80px;
+  width: 55%;
+}
+.product-container {
+  width: 30%;
+  margin-top: 30px;
+  background-color: white;
+  height: fit-content;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 5px 5px 10px #4b3f72;
+}
