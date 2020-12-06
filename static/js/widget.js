@@ -22,7 +22,7 @@
       `       </div>` +
       `       <div class="widget-cell">` +
       `           <label class="widget-label" id="widget-phone-label" for="widget-phone">Phone</label>` +
-      `           <input type="number" id="widget-phone" class="widget-input" name="phone" />` +
+      `             <input type="number" id="widget-phone" class="widget-input" name="phone" />` +
       `       </div>` +
       `   </div>` +
       `   <button id='submit-button'>BOOK NOW</button>` +
@@ -41,6 +41,14 @@
     if (container) {
       container.innerHTML = self.html;
     }
+
+    var selectBox = document.getElementById("phone-dropdown");
+    // for (var i = 0, l = phone_country.length; i < l; i++) {
+    //   var option = options[i];
+    //   selectBox.options.add(
+    //     new Option(option.text, option.value, option.selected),
+    //   );
+    // }
   }
   function initialiseEvents(self) {
     var button = document.getElementById("submit-button");

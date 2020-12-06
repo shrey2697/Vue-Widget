@@ -6,7 +6,11 @@
       <!-- Form Component  -->
       <div class="form">
         <div class="form-container">
-          <FormComponent :currentActive="currentActive" :quantity="quantity" />
+          <FormComponent
+            :currentActive="currentActive"
+            :quantity="quantity"
+            ref="form"
+          />
         </div>
         <div class="product-container">
           <ProductComponent
@@ -18,7 +22,7 @@
         </div>
       </div>
     </div>
-    <Footer :previous="previous" :next="next" />
+    <Footer :previous="previous" :next="next" :currentActive="currentActive" />
   </div>
 </template>
 
@@ -40,7 +44,18 @@ export default {
   methods: {
     next() {
       if (this.currentActive < 3) {
-        this.currentActive += 1;
+        this.$refs.form.$refs.userDetails.validate((valid) => {
+          if (valid) {
+            this.currentActive += 1;
+          } else {
+            this.$notify.error({
+              title: "Details are incomplete",
+              duration: 3000,
+              offset: 80,
+            });
+            return false;
+          }
+        });
       }
     },
     previous() {

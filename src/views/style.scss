@@ -10,12 +10,12 @@
 .body {
   padding: 2% 5%;
   background-color: rgb(170, 195, 221);
-  height: 100vh;
+  min-height: 100vh;
 }
 .footer {
   background-color: black;
   position: fixed;
-  width: 100%;
+  width: 100vw;
   bottom: 0;
   padding: 10px 20px;
   left: 0;

@@ -56,6 +56,9 @@
   width: 50%;
   margin: 0 5px;
 }
+.widget-cell > div {
+  display: flex;
+}
 label {
   font-size: 14px;
   color: grey;
@@ -68,6 +71,13 @@ label {
 input {
   padding: 10px;
   width: 100%;
+  outline-color: #119da4;
+  border: solid 1px #dddddd;
+  border-radius: 5px;
+  color: rgb(54, 54, 54);
+}
+select {
+  width: 30%;
   outline-color: #119da4;
   border: solid 1px #dddddd;
   border-radius: 5px;
