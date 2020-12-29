@@ -105,7 +105,7 @@
     }
     // Opening the vue app with all the details
     window.open(
-      `http://localhost:8080?firstname=${form["firstname"].value}&lastname=${form["lastname"].value}&email=${form["email"].value}&phone=${form["phone"].value}`,
+      `https://vuewidget.herokuapp.com/?firstname=${form["firstname"].value}&lastname=${form["lastname"].value}&email=${form["email"].value}&phone=${form["phone"].value}`,
     );
   }
 })();

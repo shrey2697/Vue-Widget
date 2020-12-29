@@ -2,11 +2,9 @@
 (function(w, d, link, script, p) {
   window.onload = function() {
     // Load css
-    var css =
-      "/Users/shreytiwari 1/Sites/projects/vue-widget/static/css/widget.css";
+    var css = "https://vuewidget.herokuapp.com/css/widget.css";
     // Load js
-    var js =
-      "/Users/shreytiwari 1/Sites/projects/vue-widget/static/js/widget.js";
+    var js = "https://vuewidget.herokuapp.com/js/widget.js";
 
     link = d.createElement("link");
     link.rel = "stylesheet";
