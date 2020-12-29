@@ -1,10 +1,11 @@
 (function() {
   this.Widget = function() {
+    // HTML source code for the widget
     this.html =
       `<div class='container'>` +
       `<div class='discount-text'>Get 10% Cashback on early bookings</div>` +
       `<div class='logo'><span>b</span><span>l</span><span>a</span><span>h</span>.com</div>` +
-      `<form name="widget-form" action="" target="_blank" style="margin-top:5%">` +
+      `<form id='form' name="widget-form" action="" target="_blank" style="margin-top:5%">` +
       `   <div class="widget-row" >` +
       `       <div class="widget-cell">` +
       `           <label class="widget-label" id="widget-firstname-label" for="widget-firstname">Firstname</label>` +
@@ -33,27 +34,26 @@
       formName: "widget-form",
     };
     this.options = defaults;
+
     initializeWidget(this);
     initialiseEvents(this);
   };
   function initializeWidget(self) {
     var container = document.getElementById(self.options.containerId);
     if (container) {
+      // Appending the widget html code to the block which has the id "widget" in the demo page
       container.innerHTML = self.html;
     }
-
-    var selectBox = document.getElementById("phone-dropdown");
-    // for (var i = 0, l = phone_country.length; i < l; i++) {
-    //   var option = options[i];
-    //   selectBox.options.add(
-    //     new Option(option.text, option.value, option.selected),
-    //   );
-    // }
   }
   function initialiseEvents(self) {
+    // Adding event listener to the "Book Now" button
     var button = document.getElementById("submit-button");
     if (button) {
       button.addEventListener("click", submitClicked.bind(self));
+    }
+    var form = document.getElementById("form");
+    if (form) {
+      form.addEventListener("submit", submitClicked.bind(self));
     }
   }
 
@@ -70,6 +70,7 @@
 
       return regex.test(value);
     }
+    // Validate phone number
     if (field === "phone") {
       regex = /^[0-9]{10}$/;
       return regex.test(value.toString());
@@ -86,7 +87,6 @@
       label;
     for (var i = 0; i < fields.length; i++) {
       field = form[fields[i]];
-
       field.className = field.className.replace(" widget-error", "");
       label = document.getElementById("widget-" + fields[i] + "-label")
         .innerText;
@@ -103,7 +103,7 @@
         return;
       }
     }
-
+    // Opening the vue app with all the details
     window.open(
       `http://localhost:8080?firstname=${form["firstname"].value}&lastname=${form["lastname"].value}&email=${form["email"].value}&phone=${form["phone"].value}`,
     );

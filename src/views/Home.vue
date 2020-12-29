@@ -13,6 +13,7 @@
           />
         </div>
         <div class="product-container">
+          <!-- Product Details and Quantity -->
           <ProductComponent
             :quantity="quantity"
             :increaseQuan="increaseQuan"
@@ -44,10 +45,13 @@ export default {
   methods: {
     next() {
       if (this.currentActive < 3) {
+        // Validate the fields
         this.$refs.form.$refs.userDetails.validate((valid) => {
           if (valid) {
+            // Move ahead if fields are valid
             this.currentActive += 1;
           } else {
+            // Show error message
             this.$notify.error({
               title: "Details are incomplete",
               duration: 3000,

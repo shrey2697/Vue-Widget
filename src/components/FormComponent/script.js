@@ -70,13 +70,6 @@ export default {
             trigger: "blur",
           },
         ],
-        addressline1: [
-          {
-            required: true,
-            message: "Please enter address line 1",
-            trigger: "blur",
-          },
-        ],
         city: [
           {
             required: true,

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-form-item label="Address Line 1" prop="addressline1">
+    <el-form-item label="Address Line 1">
       <el-input
         v-model="userDetails.addressLine1"
         placeholder="Address Line 1"
