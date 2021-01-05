@@ -27,3 +27,15 @@ A widget implementation using Vue and Vanilla JS which injects a small form in a
 - We have one Blah's component in the external app.
 - User can enter some details in that component from the external app.
 - The user is then redirected to the main app so that they we can fill all the other details needed for early booking.
+
+
+#### The magical code you have to use in the website
+```
+ <script>
+    var js = document.createElement("script");
+    js.async = true;
+    // Path to the script that loads the widget
+    js.src = "https://vuewidget.herokuapp.com/widget-loader.js";
+    document.getElementsByTagName("head")[0].appendChild(js);
+ </script>
+```
